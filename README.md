@@ -1,17 +1,17 @@
-# Docker Arch Linux devel
+# Docker Jenkins
 
 This repository contains a **Dockerfile** for an Arch Linux with developement tools docker image, and a **Vagrantfile** for local development. This repository is a part of an automated build, published to the [Docker Hub][docker_hub_repository].
 
-**Base image:** [bachelorthesis/archlinux][docker_hub_base_image]
+**Base image:** [bachelorthesis/java][docker_hub_base_image]
 
-[docker_hub_repository]: https://registry.hub.docker.com/u/bachelorthesis/archlinux-devel/
-[docker_hub_base_image]: https://registry.hub.docker.com/u/bachelorthesis/archlinux/
+[docker_hub_repository]: https://registry.hub.docker.com/u/bachelorthesis/jenkins/
+[docker_hub_base_image]: https://registry.hub.docker.com/u/bachelorthesis/java/
 
 ### Installed packages
 
-* [jenkins-ci][jenkins-ci] - An extensible open source continuous integration server
+* [jenkins][jenkins] - Extensible open source continuous integration server
 
-[jenkins-ci]: https://www.archlinux.org/packages/community/any/jenkins/
+[jenkins]: https://www.archlinux.org/packages/community/any/jenkins/
 
 ## Resources
 
