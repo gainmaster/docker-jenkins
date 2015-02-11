@@ -24,4 +24,4 @@ EXPOSE 50000
 # Run s6 with PID 1
 #ENTRYPOINT ["/usr/bin/s6-svscan","/etc/s6"]
 
-CMD ["/usr/bin/java", ,"$JAVA_OPTIONS", "-jar", "/usr/share/java/jenkins/jenkins.war" "$JENKINS_OPTS"]
+CMD ["/usr/sbin/java", "-jar", "/usr/share/java/jenkins/jenkins.war"]
