@@ -11,8 +11,9 @@ VOLUME /var/lib/jenkins
 # User
 USER jenkins
 
-ENV JENKINS_HOME /var/lib/jenkins
-ENV JENKINS_OPTS 
+ENV JENKINS_HOME    "/var/lib/jenkins"
+ENV JENKINS_OPTIONS ""  
+ENV JAVA_OPTIONS    "-Xmx512m"
 
 # Expose port for main web interface
 EXPOSE 8080
@@ -23,4 +24,4 @@ EXPOSE 50000
 # Run s6 with PID 1
 #ENTRYPOINT ["/usr/bin/s6-svscan","/etc/s6"]
 
-CMD ["/usr/bin/java", ,"-Xmx512m", "-jar", "/usr/share/java/jenkins/jenkins.war" "$JENKINS_OPTS"]
+CMD ["/usr/bin/java", ,"$JAVA_OPTIONS", "-jar", "/usr/share/java/jenkins/jenkins.war" "$JENKINS_OPTS"]
