@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+# Jenkins s6 finish script
+#
+
+/usr/bin/s6-svscanctl -t /etc/s6
