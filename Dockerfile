@@ -2,7 +2,7 @@
 FROM bachelorthesis/java
 
 # Install jenkins
-RUN pacman -S --noconfirm jenkins
+RUN pacman -Sy --noconfirm jenkins
 ADD s6/jenkins /etc/s6/jenkins
 
 # Mount jenkins homedirectory
