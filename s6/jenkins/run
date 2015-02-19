@@ -2,5 +2,46 @@
 #
 # Jenkins s6 run script
 #
-
 /usr/sbin/runuser -l  jenkins -c '/usr/bin/java -jar /usr/share/java/jenkins/jenkins.war'
+
+
+
+#[root@8ff146681902 ~]# cat /usr/lib/systemd/system/jenkins.service
+#[Unit]
+#Description=Extendable continuous integration server
+#After=network.target
+#
+#[Service]
+#User=jenkins
+#Type=simple
+#EnvironmentFile=/etc/conf.d/jenkins
+#StandardOutput=syslog
+#StandardError=syslog
+#SyslogIdentifier=jenkins
+#ExecStart=/bin/sh -c 'eval $JENKINS_COMMAND_LINE'
+##MemoryLimit=768M
+#OOMScoreAdjust=-1000
+#LimitCPU=infinity
+#LimitFSIZE=infinity
+#LimitDATA=infinity
+#LimitCORE=0
+#LimitAS=infinity
+#LimitLOCKS=infinity
+#
+#[Install]
+#WantedBy=multi-user.target
+
+#[root@8ff146681902 ~]# cat /etc/conf.d/jenkins
+#JAVA=/usr/bin/java
+#JAVA_ARGS=-Xmx512m
+#JAVA_OPTS=
+#JENKINS_USER=jenkins
+#JENKINS_HOME=/var/lib/jenkins
+#JENKINS_WAR=/usr/share/java/jenkins/jenkins.war
+#JENKINS_WEBROOT=--webroot=/var/cache/jenkins
+#JENKINS_PORT=--httpPort=8090
+#JENKINS_AJPPORT=--ajp13Port=-1
+#JENKINS_OPTS=
+#JENKINS_COMMAND_LINE="$JAVA $JAVA_ARGS $JAVA_OPTS -jar $JENKINS_WAR $JENKINS_WEBROOT $JENKINS_PORT $JENKINS_AJPPORT $JENKINS_OPTS"
+#
+## vim:set ts=2 sw=2 et:
