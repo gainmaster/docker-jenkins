@@ -9,7 +9,7 @@ ADD s6/jenkins /etc/s6/jenkins
 VOLUME /var/lib/jenkins
 
 # User
-USER jenkins
+#USER jenkins
 
 ENV JENKINS_HOME    "/var/lib/jenkins"
 ENV JENKINS_OPTIONS ""  
@@ -22,6 +22,6 @@ EXPOSE 8080
 EXPOSE 50000
 
 # Run s6 with PID 1
-#ENTRYPOINT ["/usr/bin/s6-svscan","/etc/s6"]
+ENTRYPOINT ["/usr/bin/s6-svscan","/etc/s6"]
 
-CMD ["/usr/sbin/java", "-jar", "/usr/share/java/jenkins/jenkins.war"]
+#CMD ["/usr/sbin/java", "-jar", "/usr/share/java/jenkins/jenkins.war"]
