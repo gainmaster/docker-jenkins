@@ -2,26 +2,21 @@
 FROM bachelorthesis/java
 
 # Install jenkins
-RUN pacman -Sy --noconfirm jenkins
-ADD s6/jenkins /etc/s6/jenkins
+RUN pacman -Sy jenkins git --noconfirm
+COPY start-jenkins.sh /usr/bin/
 
 # Mount jenkins homedirectory
 VOLUME /var/lib/jenkins
 
 # User
-#USER jenkins
+USER jenkins
 
-ENV JENKINS_HOME    "/var/lib/jenkins"
-ENV JENKINS_OPTIONS ""  
-ENV JAVA_OPTIONS    "-Xmx512m"
+ENV JAVA_ARGUMENTS=
+ENV JAVA_OPTIONS=-Xmx512m
+ENV JENKINS_PORT=8080
+ENV JENKINS_OPTS=
 
-# Expose port for main web interface
-EXPOSE 8080
+# Expose port for main web interface and slave agents
+EXPOSE 8080 50000
 
-# Expose port for attached slave agents
-EXPOSE 50000
-
-# Run s6 with PID 1
-ENTRYPOINT ["/usr/bin/s6-svscan","/etc/s6"]
-
-#CMD ["/usr/sbin/java", "-jar", "/usr/share/java/jenkins/jenkins.war"]
+CMD ["/usr/bin/start-jenkins.sh"]

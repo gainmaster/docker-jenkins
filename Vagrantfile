@@ -14,7 +14,9 @@ Vagrant.configure("2") do |config|
       d.remains_running = true
 
       # Docker run configuration
-      #d.cmd     = ["/usr/sbin/java", "-jar", "/usr/share/java/jenkins/jenkins.war"]
+      d.env     = {
+        'START_SSHD' => 'true'
+      }
       d.volumes = ["/home/core/shared/docker-jenkins:/opt/shared:rw"]
       d.ports   = ["8081:8080"]
 
