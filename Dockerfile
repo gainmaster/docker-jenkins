@@ -3,7 +3,7 @@ FROM bachelorthesis/java
 
 # Install jenkins
 RUN pacman -Sy jenkins git --noconfirm
-COPY start-jenkins.sh /usr/bin/
+COPY start-jenkins.sh /usr/bin/start-jenkins
 
 # Mount jenkins homedirectory
 VOLUME /var/lib/jenkins
@@ -19,4 +19,4 @@ ENV JENKINS_OPTS=
 # Expose port for main web interface and slave agents
 EXPOSE 8080 50000
 
-CMD ["/usr/bin/start-jenkins.sh"]
+CMD ["start-jenkins"]
