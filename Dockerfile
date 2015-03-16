@@ -2,7 +2,7 @@
 FROM bachelorthesis/java
 
 # Install jenkins
-RUN pacman -Sy jenkins git --noconfirm
+RUN pacman -Sy jenkins git docker --noconfirm
 COPY script/start_jenkins.sh /usr/bin/start_jenkins
 
 # Mount jenkins homedirectory
