@@ -5,6 +5,8 @@ FROM bachelorthesis/java
 RUN pacman -Sy jenkins git docker --noconfirm
 COPY script/start_jenkins.sh /usr/bin/start_jenkins
 
+RUN usermod -G docker jenkins
+
 # Mount jenkins homedirectory
 VOLUME /var/lib/jenkins
 
