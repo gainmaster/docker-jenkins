@@ -5,7 +5,7 @@ FROM bachelorthesis/java
 RUN pacman -Sy jenkins git docker --noconfirm
 COPY script/start_jenkins.sh /usr/bin/start_jenkins
 
-RUN usermod -G docker jenkins
+ADD https://github.com/coreos/fleet/releases/download/v0.9.1/fleet-v0.9.1-linux-amd64.tar.gz /usr/bin/
 
 # Mount jenkins homedirectory
 VOLUME /var/lib/jenkins
