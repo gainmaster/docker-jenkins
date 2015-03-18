@@ -7,16 +7,16 @@ COPY script/start_jenkins.sh /usr/bin/start_jenkins
 
 # Install fleetctl
 RUN \
-  curl -O -L https://github.com/coreos/fleet/releases/download/v0.9.1/fleet-v0.9.1-linux-amd64.tar.gz
-  tar -zxvf fleet-v0.9.1-linux-amd64.tar.gz fleet-v0.9.1-linux-amd64/fleetctl
-  mv fleet-v0.9.1-linux-amd64/fleetctl /usr/bin/fleetctl
+  curl -O -L https://github.com/coreos/fleet/releases/download/v0.9.1/fleet-v0.9.1-linux-amd64.tar.gz && \
+  tar -zxvf fleet-v0.9.1-linux-amd64.tar.gz fleet-v0.9.1-linux-amd64/fleetctl && \
+  mv fleet-v0.9.1-linux-amd64/fleetctl /usr/bin/fleetctl && \
   rm -Rf fleet-v0.9.1*
 
 # Install etcdctl
 RUN \
-  curl -O -L https://github.com/coreos/etcd/releases/download/v0.4.5/etcd-v0.4.5-linux-amd64.tar.gz
-  tar -zxvf etcd-v0.4.5-linux-amd64.tar.gz etcd-v0.4.5-linux-amd64/etcdctl
-  mv etcd-v0.4.5-linux-amd64/etcdctl /usr/bin/etcdctl
+  curl -O -L https://github.com/coreos/etcd/releases/download/v0.4.5/etcd-v0.4.5-linux-amd64.tar.gz && \
+  tar -zxvf etcd-v0.4.5-linux-amd64.tar.gz etcd-v0.4.5-linux-amd64/etcdctl && \
+  mv etcd-v0.4.5-linux-amd64/etcdctl /usr/bin/etcdctl && \
   rm -Rf etcd-v0.4.5*
 
 # Mount jenkins homedirectory
