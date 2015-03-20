@@ -1,9 +1,9 @@
 FROM bachelorthesis/java
-MAINTAINER Tony Hesjevik <tony@hesjevik.no>
+MAINTAINER Tony Hesjevik <tony@hesjevik>
 
 # Install jenkins
-RUN pacman -Sy jenkins git docker --noconfirm
-COPY script/start_jenkins.sh /usr/bin/start_jenkins
+RUN pacman-install jenkins git docker
+COPY start_jenkins.sh /usr/local/bin/start_jenkins
 
 # Install fleetctl
 RUN \
@@ -19,10 +19,8 @@ RUN \
   mv etcd-v0.4.5-linux-amd64/etcdctl /usr/bin/etcdctl && \
   rm -Rf etcd-v0.4.5*
 
-# Mount jenkins homedirectory
 VOLUME /var/lib/jenkins
 
-# User
 USER jenkins
 
 ENV JAVA_ARGUMENTS=
@@ -30,7 +28,6 @@ ENV JAVA_OPTIONS=-Xmx512m
 ENV JENKINS_PORT=8080
 ENV JENKINS_OPTS=
 
-# Expose port for main web interface and slave agents
-EXPOSE 8080 50000
+EXPOSE 8080
 
 CMD ["start_jenkins"]
