@@ -9,16 +9,16 @@ cd $(dirname "${BASH_SOURCE[0]}") && cd ../
 declare IMAGE_NAME="bachelorthesis/jenkins"
 
 function ship_master() {
-	docker push "${IMAGE_NAME}:latest"
-	docker push "${IMAGE_NAME}:master"
+	sudo docker push "${IMAGE_NAME}:latest"
+	sudo docker push "${IMAGE_NAME}:master"
 }
 
 function ship_slave() {
-    docker push "${IMAGE_NAME}:slave"
+    sudo docker push "${IMAGE_NAME}:slave"
 }
 
 function ship() {
-	docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+	sudo docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
 	ship_master
 	ship_slave
 }
