@@ -22,7 +22,6 @@ fi
 
 # Build docker image
 function build {
-    docker build -t $IMAGE_NAME .
     # Master
     docker build -t "${IMAGE_NAME}:latest" master
     docker build -t "${IMAGE_NAME}:master" master
