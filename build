@@ -17,11 +17,11 @@ declare IMAGE_NAME="bachelorthesis/jenkins"
 function build {
     version="${1}"
     
-    if [ "$version" -eq "master" ]; then
+    if [ "$version" = "master" ]; then
         docker build -t "${IMAGE_NAME}:latest" master
         docker build -t "${IMAGE_NAME}:master" master
     
-    elif [ "$version" -eq "slave" ]; then
+    elif [ "$version" = "slave" ]; then
         docker build -t "${IMAGE_NAME}:slave" slave
 
     else
@@ -68,7 +68,7 @@ function push {
         sudo docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
         sudo docker push "${IMAGE_NAME}:${version}"
 
-        if [ "$version" -eq "master" ]; then
+        if [ "$version" = "master" ]; then
             sudo docker push -t "${IMAGE_NAME}:latest" master
         fi
 
@@ -76,7 +76,7 @@ function push {
         docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
         docker push "${IMAGE_NAME}:${version}"
 
-        if [ "$version" -eq "master" ]; then
+        if [ "$version" = "master" ]; then
             sudo docker push -t "${IMAGE_NAME}:latest" master
         fi
     fi
