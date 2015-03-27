@@ -21,7 +21,7 @@ function build {
         docker build -t "${IMAGE_NAME}:latest" master
         docker build -t "${IMAGE_NAME}:master" master
     
-    elif [ "$version" -eq "slave" ]
+    elif [ "$version" -eq "slave" ]; then
         docker build -t "${IMAGE_NAME}:slave" slave
 
     else
