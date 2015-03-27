@@ -1,6 +1,6 @@
 # Docker Jenkins
 
-[![Build Status](http://jenkins.hesjevik.im/buildStatus/icon?job=docker-archlinux)](http://jenkins.hesjevik.im/job/docker-jenkins/) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg?style=plastic)](https://registry.hub.docker.com/u/bachelorthesis/jenkins/)
+[![Build Status](http://jenkins.hesjevik.im/buildStatus/icon?job=docker-jenkins)](http://jenkins.hesjevik.im/job/docker-jenkins/) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg?style=plastic)](https://registry.hub.docker.com/u/bachelorthesis/jenkins/)
 
 This repository contains a **Dockerfile** for an Arch Linux with developement tools docker image, and a **Vagrantfile** for local development. This repository is a part of an automated build, published to the [Docker Hub][docker_hub_repository].
 
