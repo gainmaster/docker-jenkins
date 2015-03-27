@@ -77,7 +77,7 @@ function push {
         docker push "${IMAGE_NAME}:${version}"
 
         if [ "$version" = "master" ]; then
-            sudo docker push -t "${IMAGE_NAME}:latest" master
+            sudo docker push "${IMAGE_NAME}:latest" master
         fi
     fi
 
