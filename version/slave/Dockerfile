@@ -1,4 +1,4 @@
-FROM bachelorthesis/dind
+FROM gainmaster/dind
 MAINTAINER Tony Hesjevik <tony@hesjevik>
 
 RUN pacman-install sudo && \

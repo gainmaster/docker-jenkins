@@ -1,4 +1,4 @@
-FROM bachelorthesis/java
+FROM gainmaster/java
 MAINTAINER Tony Hesjevik <tony@hesjevik>
 
 # Install jenkins
