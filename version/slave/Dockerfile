@@ -13,8 +13,7 @@ RUN \
 
 # Add jenkins group and user
 RUN \
-  groupadd jenkins --gid 997 && \
-  useradd jenkins --uid 997 --gid jenkins --groups docker,wheel
+  useradd jenkins --uid 997 --gid docker --groups wheel
 
 USER jenkins
 
