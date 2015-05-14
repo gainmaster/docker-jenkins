@@ -7,10 +7,10 @@ COPY start_jenkins.sh /usr/local/bin/start_jenkins
 
 # Install fleetctl
 RUN \
-  curl -O -L https://github.com/coreos/fleet/releases/download/v0.9.1/fleet-v0.9.1-linux-amd64.tar.gz && \
-  tar -zxvf fleet-v0.9.1-linux-amd64.tar.gz fleet-v0.9.1-linux-amd64/fleetctl && \
-  mv fleet-v0.9.1-linux-amd64/fleetctl /usr/bin/fleetctl && \
-  rm -Rf fleet-v0.9.1*
+  curl -O -L https://github.com/coreos/fleet/releases/download/v0.9.2/fleet-v0.9.2-linux-amd64.tar.gz && \
+  tar -zxvf fleet-v0.9.2-linux-amd64.tar.gz fleet-v0.9.2-linux-amd64/fleetctl && \
+  mv fleet-v0.9.2-linux-amd64/fleetctl /usr/bin/fleetctl && \
+  rm -Rf fleet-v0.9.2*
 
 # Install etcdctl
 RUN \
