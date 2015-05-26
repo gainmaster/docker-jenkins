@@ -2,12 +2,20 @@
 
 [![Build Status](http://ci.hesjevik.im/buildStatus/icon?job=docker-jenkins)](http://ci.hesjevik.im/job/docker-jenkins/) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg?style=plastic)](https://registry.hub.docker.com/u/gainmaster/jenkins/)
 
-This repository contains a **Dockerfile** for an Arch Linux with developement tools docker image, and a **Vagrantfile** for local development. This repository is a part of an automated build, published to the [Docker Hub][docker_hub_repository].
+This repository contains a **Dockerfile** for an Arch Linux with developement tools docker image. This repository is a part of an automated build, published to the [Docker Hub][docker_hub_repository].
 
 **Base image:** [gainmaster/java][docker_hub_base_image]
 
 [docker_hub_repository]: https://registry.hub.docker.com/u/gainmaster/jenkins/
 [docker_hub_base_image]: https://registry.hub.docker.com/u/gainmaster/java/
+
+## Docker Hub automated build tags
+
+`gainmaster/nodejs` provides multiple tagged images:
+
+* `latest` (default) : Jenkins Master (alias to `master`)
+* `master` : Jenkins Master
+* `slave` : Jenkins slave
 
 ### Installed packages
 
